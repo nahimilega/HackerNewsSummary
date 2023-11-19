@@ -1,0 +1,7 @@
+cron:
+- description: "ping /update_channel endpoint every 60 minutes"
+  url: /update_channel
+  schedule: every 60 mins
+  timezone: Asia/Kolkata
+  retry_parameters:
+    job_retry_limit: 0

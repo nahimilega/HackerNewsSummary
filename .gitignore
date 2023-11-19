@@ -1,0 +1,54 @@
+# Mac OS
+.DS_Store
+**/.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyz
+*.pyw
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Flask
+instance/
+*.pyc
+.env
+
+# Virtual environment
+venv/
+ENV/
+
+# IDE
+.vscode/
+*.code-workspace
+
+# Logs
+*.log
+
+# Dependency directories
+node_modules/
+bower_components/
+
+# Compiled files
+*.pyc
+*.class
+
+release.sh
+
+# Environment
+.env
+.pylintrc
+
+firebase_keys.json
+
+# Ignore everything in the static directory except the .gitkeep file
+/static/*
+!/static/.gitkeep
+
+# Ignore everything in the templates directory except the .gitkeep file
+/templates/*
+
+app_config.py
