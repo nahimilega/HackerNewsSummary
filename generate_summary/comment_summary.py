@@ -19,7 +19,11 @@ Try to quote the comments and rebuttle of those comments. Make it more like goss
 
 Avoiding Boilerplate Language. Do not mention article name or start with "The comments on the article..."
 
+Do now repeat the title of the article in the summary.
+
 Remove any fluff and keep only dense to the point information.
+
+Keep it short.
 
 REMEMBER: Keep it in pointers and very concise.
 

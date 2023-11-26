@@ -31,10 +31,10 @@ You are given the scraped content of URL.
 
 
 
-Make a dehyped title for the article that capture gist of the article in a single, dense sentence.
+Make a dehyped title for the article that capture gist of the article in a single, dense sentence. Keep is different and more informative from the title of the article. Do not repeat the title of the article in the dehyped title.
 
 After that please provide a TLDR of the content of the webpage. Focus on the main topics and key points discussed. 
-The goal is to provide enough information to gauge the article's relevance without being too lengthy. Avoiding Boilerplate Language
+The goal is to provide enough information to gauge the article's relevance without being too lengthy. Avoiding Boilerplate Language. Do now repeat the title of the article in the summary.
 
 Keep it in pointer and very concise and stick to the facts and and key themes discussed.
 

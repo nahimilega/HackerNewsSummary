@@ -39,6 +39,8 @@ class Story:
 
     def populate_comment_tree(self, story_data: dict) -> list:
         comment_list = []
+        if "kids" not in story_data:
+            return comment_list
         for kid in story_data["kids"]:
             comment_list.extend(self._recursively_populate_comment_data(kid))
         return comment_list
@@ -70,12 +72,13 @@ class Story:
         return comment_list
 
     def post_story_to_telegram(self):
-        message: str = self._compose_message_for_telegram()
         comment_url = f"https://news.ycombinator.com/item?id={self.id}"
         article_url = self.url
 
         if article_url == "":
             article_url = comment_url
+
+        message: str = self._compose_message_for_telegram(article_url, comment_url)
 
         send_message.send_telegram_message(message, article_url, comment_url)
 
@@ -85,7 +88,7 @@ class Story:
             }
         )
 
-    def _compose_message_for_telegram(self) -> str:
+    def _compose_message_for_telegram(self, article_url, comment_url) -> str:
         #         "dehyped_title",
         # "article_summary",
         comment_summary_str: str = comment_summary.generate_comment_summary(self)
@@ -97,7 +100,7 @@ class Story:
                 self
             )
             if dehyped_title != "" and article_summary != "":
-                message += f"\n\n<b>De-Hyped Title:</b> {dehyped_title}\n\n<b>Article Summary</b>\n{article_summary}"
+                message += f"\n\n<b>De-Hyped Title:</b> {dehyped_title}\n\n<b>Article Summary</b>\n<a href='{article_url}'>Link</a>\n{article_summary}"
 
-        message += f"\n\n<b>Comment Summary<a href='{self.url}' style='color:#FFFFFF;'>:</a></b>\n{comment_summary_str}"
+        message += f"\n\n<b>Comment Summary<a href='{self.url}' style='color:#FFFFFF;'>:</a></b>\n<a href='{comment_url}'>Link</a>\n{comment_summary_str}"
         return message

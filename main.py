@@ -26,7 +26,7 @@ def update_channel():
     if update_request_logs:
         return jsonify({"done": "okay"}), 200
     update_request_logs = True
-    story_ids = get_hn_details.fetch_unposted_story_ids()[:10]
+    story_ids = get_hn_details.fetch_unposted_story_ids()[:15]
     # story_ids = ["38305234"]
     for story_id in story_ids:
         print(story_id)
